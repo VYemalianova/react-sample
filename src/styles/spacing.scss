@@ -1,0 +1,45 @@
+// ----------------------------------------------
+// Spacing Helper
+// ----------------------------------------------
+// This SCSS helper generates utility classes for
+// margin and padding based on predefined sizes.
+//
+// Usage in HTML/JSX:
+//   <div class="mt-s pr-xl">...</div>
+//
+// Class naming convention:
+//   m{side abbreviation}-{size}
+//   p{side abbreviation}-{size}
+//
+// Examples:
+//   mt-s   => margin-top: 12px;
+//   pb-xl  => padding-bottom: 32px;
+//
+// Available sizes: xs, s, m, l, xl
+// Available sides: top (t), bottom (b), left (l), right (r)
+//
+// Note: This helper is included globally via global.scss
+// ----------------------------------------------
+
+@use 'sass:string';
+
+$spaceamounts: (
+  'xs': 8px,
+  's': 12px,
+  'm': 16px,
+  'l': 24px,
+  'xl': 32px,
+);
+$sides: (top, bottom, left, right);
+
+@each $name, $space in $spaceamounts {
+  @each $side in $sides {
+    .m#{string.slice($side, 0, 1)}-#{$name} {
+      margin-#{$side}: #{$space};
+    }
+
+    .p#{string.slice($side, 0, 1)}-#{$name} {
+      padding-#{$side}: #{$space};
+    }
+  }
+}
