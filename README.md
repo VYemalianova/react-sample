@@ -15,26 +15,26 @@ This is a simple React application built with TypeScript. It was created as a co
 
 ### Install Dependencies
 
-  ```bash
-  npm install
-  ```
+```bash
+npm install
+```
 
 ### Development Server
 
-  ```bash
-  npm run start
-  ```
+```bash
+npm run start
+```
 
-  This will start the development server on <http://localhost:5173>
+This will start the development server on <http://localhost:5173>
 
 ### Build
 
-  ```bash
-  npm run build
-  ```
+```bash
+npm run build
+```
 
 ### Linting
 
-  ```bash
-  npm run lint
-  ```
+```bash
+npm run lint
+```
