@@ -1,5 +1,6 @@
 @use './spacing';
 @use './variables';
+@use './color-classes.scss' as colors;
 
 .h1 {
   font-size: 48px !important;
@@ -50,10 +51,6 @@ h4 {
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-  }
-
-  &--button {
-    background-image: linear-gradient(45deg, variables.$purple-01, variables.$brink-pink);
   }
 
   &--moonraker-remy {
