@@ -1,22 +1,41 @@
-import { ThemeProvider } from '@mui/material';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { MuiTheme } from './theme';
 import './styles/global.scss';
 import './App.scss';
 
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Layout from './components/Layout/Layout';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
+import HomePage from './pages/HomePage/HomePage';
+import DailyHoroscopePage from './pages/DailyHoroscopePage/DailyHoroscopePage';
+import LoveHoroscopePage from './pages/LoveHoroscopePage/LoveHoroscopePage';
+import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: 'about-us', element: <AboutUsPage /> },
+      {
+        path: 'daily-horoscope',
+        element: <DailyHoroscopePage />,
+        children: [{ path: ':sign' }],
+      },
+      {
+        path: 'love-horoscope',
+        element: <LoveHoroscopePage />,
+        children: [{ path: ':sign' }],
+      },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <ThemeProvider theme={MuiTheme}>
-      <div className="page-layout">
-        <Header />
-        <div className="page-content">body</div>
-        <Footer />
-      </div>
-    </ThemeProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
