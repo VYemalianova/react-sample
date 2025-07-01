@@ -1,17 +1,19 @@
 import { ThemeProvider } from '@mui/material';
 
+import { MuiTheme } from './theme';
 import './styles/global.scss';
 import './App.scss';
 
-import { MuiTheme } from './theme';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <ThemeProvider theme={MuiTheme}>
       <div className="page-layout">
-        <div className="header mt-s mb-s pr-xl bg-black">header</div>
-        <div className="body">body</div>
-        <div className="footer">footer</div>
+        <Header />
+        <div className="page-content">body</div>
+        <Footer />
       </div>
     </ThemeProvider>
   );

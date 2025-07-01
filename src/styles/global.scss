@@ -1,6 +1,6 @@
 @use './spacing';
 @use './variables';
-@use './color-classes.scss' as colors;
+@use './color-classes' as colors;
 
 .h1 {
   font-size: 48px !important;
