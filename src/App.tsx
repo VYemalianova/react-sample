@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import './styles/global.scss';
+import '@styles/global.scss';
 import './App.scss';
 
 import Layout from './components/Layout/Layout';
