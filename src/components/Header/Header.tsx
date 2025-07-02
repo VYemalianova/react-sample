@@ -2,15 +2,16 @@ import { Button } from '@mui/material';
 import FlareIcon from '@mui/icons-material/Flare';
 
 import styles from './Header.module.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header className={`${styles.header} gradient--moonraker-remy`}>
       <div className={styles['header-content']}>
-        <div className={styles['logo-wrapper']}>
+        <Link to="/" className={styles['logo-wrapper']}>
           <img src="./src/assets/lock.svg" />
-          <span className="gradient--text">AstroYod</span>
-        </div>
+          <span className="gradient--text uppercase">AstroYod</span>
+        </Link>
 
         <div className={styles['btns-wrapper']}>
           <Button variant="dark">Sign Up</Button>

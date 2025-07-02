@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
 const SOCIAL_NETWORK_LIST = ['facebook', 'instagram', 'pinterest', 'reddit', 'twitter'];
@@ -11,7 +12,7 @@ const Footer = () => {
             <div className={styles['social-media-wrapper']}>
               <div className={styles['logo-wrapper']}>
                 <img src="./src/assets/lock.svg" />
-                <span className="gradient--text">AstroYod</span>
+                <span className="gradient--text uppercase">AstroYod</span>
               </div>
 
               <h4 className="uppercase-title mt-m">follow us:</h4>
@@ -27,10 +28,18 @@ const Footer = () => {
             </div>
 
             <div className={styles['more-links-wrapper']}>
-              <a className="cursor-pointer">About us</a>
-              <a className="cursor-pointer">Contact us</a>
-              <a className="cursor-pointer">Privacy Policy </a>
-              <a className="cursor-pointer">Terms of Service </a>
+              <Link to="/about-us" className="cursor-pointer">
+                About us
+              </Link>
+              <Link to="/contact-us" className="cursor-pointer">
+                Contact us
+              </Link>
+              <Link to="/" className="cursor-pointer">
+                Privacy Policy{' '}
+              </Link>
+              <Link to="/" className="cursor-pointer">
+                Terms of Service{' '}
+              </Link>
             </div>
           </div>
 

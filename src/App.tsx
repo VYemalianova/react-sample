@@ -10,6 +10,7 @@ import DailyHoroscopePage from './pages/DailyHoroscopePage/DailyHoroscopePage';
 import LoveHoroscopePage from './pages/LoveHoroscopePage/LoveHoroscopePage';
 import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import ContactUsPage from './pages/ContactUsPage/ContactUsPage';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'about-us', element: <AboutUsPage /> },
+      { path: 'contact-us', element: <ContactUsPage /> },
       {
         path: 'daily-horoscope',
         element: <DailyHoroscopePage />,
