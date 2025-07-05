@@ -4,19 +4,13 @@
 @use './variables' as *;
 @use './mixins.scss' as mixins;
 
-.page-content-wrapper {
-  @include mixins.text(20px, 400, 32px);
-  min-height: 100%;
+.content-wrapper {
   max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   margin: 0 auto;
   padding: 32px 0;
-  gap: 52px;
 }
 
-.h1 {
+h1 {
   font-size: 48px !important;
   line-height: 58px !important;
   margin: 0;

@@ -4,10 +4,10 @@ const SOCIAL_NETWORK_LIST = ['facebook', 'instagram', 'pinterest', 'reddit', 'tw
 
 const ContactUsPage = () => {
   return (
-    <div className="page-content-wrapper color-gun-powder">
+    <div className={`content-wrapper color-gun-powder ${styles.content}`}>
       <div>
         <h1 className="gradient--text">Contact Our Team</h1>
-        <p className="mb-xl">
+        <p>
           We exist! You can fill out our form to ask a question or tell us more about your
           inquiries. This is the fastest and easiest way to reach us. We honestly and
           enthusiastically read each and every message we get. And we always write back.
@@ -15,7 +15,7 @@ const ContactUsPage = () => {
       </div>
 
       <div>
-        <h4 className="uppercase-title mt-xl">You can also follow us on social media:</h4>
+        <h4 className="uppercase-title">You can also follow us on social media:</h4>
         <div className={styles['social-media-icons']}>
           {SOCIAL_NETWORK_LIST.map((network, index) => (
             <img
