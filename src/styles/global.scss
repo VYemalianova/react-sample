@@ -34,26 +34,26 @@ h4 {
   margin: 0;
 }
 
-.uppercase-title {
+.text-caps {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: variables.$gun-powder;
 }
 
-.uppercase {
+.text-uppercase {
   text-transform: uppercase;
 }
 
-.link {
+.link,
+.link__underline {
   color: variables.$purple-01;
   font-size: 20px;
   font-weight: 500;
-  text-decoration: none;
   cursor: pointer;
+}
 
-  &.email {
-    text-decoration: underline;
-  }
+.link {
+  text-decoration: none;
 }
 
 .gradient {
