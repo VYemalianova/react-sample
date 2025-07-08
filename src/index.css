@@ -1,0 +1,21 @@
+:root {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #08030e;
+  background-color: #ffffff;
+
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}

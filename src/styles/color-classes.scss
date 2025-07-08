@@ -1,0 +1,27 @@
+@use './variables';
+
+.bg-black {
+  background-color: variables.$black;
+}
+.bg-white {
+  background-color: variables.$white;
+}
+.bg-gun-powder {
+  background-color: variables.$gun-powder;
+}
+.bg-purple-01 {
+  background-color: variables.$purple-01;
+}
+
+.color-black {
+  color: variables.$black;
+}
+.color-white {
+  color: variables.$white;
+}
+.color-gun-powder {
+  color: variables.$gun-powder;
+}
+.color-purple-01 {
+  color: variables.$purple-01;
+}
