@@ -1,0 +1,92 @@
+@use './spacing';
+@use './color-classes';
+
+@use './variables' as variables;
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+h1 {
+  font-size: 48px !important;
+  line-height: 58px !important;
+  margin: 0;
+}
+
+h2 {
+  font-size: 36px !important;
+  line-height: 48px !important;
+  margin: 0;
+}
+
+h3 {
+  font-size: 28px !important;
+  line-height: 33px !important;
+  margin: 0;
+}
+
+h4 {
+  font-size: 14px !important;
+  line-height: 20px !important;
+  font-weight: 700 !important;
+  margin: 0;
+}
+
+.uppercase-title {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: variables.$gun-powder;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.link {
+  color: variables.$purple-01;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+
+  &.email {
+    text-decoration: underline;
+  }
+}
+
+.gradient {
+  &--text {
+    font-weight: 700;
+    background-image: linear-gradient(45deg, variables.$purple-01, variables.$brink-pink);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+
+  &--moonraker-remy {
+    background: linear-gradient(to right, variables.$moon-raker, variables.$remy);
+  }
+
+  &--selago-wisppink {
+    background: linear-gradient(to right, variables.$selago, variables.$wisp-pink);
+  }
+
+  &--purple-brinkpink {
+    background: linear-gradient(to right, variables.$purple-01, variables.$brink-pink);
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.vertical-divider {
+  height: 90px;
+  width: 2px;
+  background: linear-gradient(to bottom, variables.$capric, variables.$sagittarius);
+}
