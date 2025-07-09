@@ -46,10 +46,14 @@ h4 {
 
 .link,
 .link__underline {
-  color: variables.$purple-01;
+  color: variables.$gun-powder;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+
+  &:hover {
+    color: variables.$purple-01;
+  }
 }
 
 .link {
