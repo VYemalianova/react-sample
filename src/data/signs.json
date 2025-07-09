@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "aries",
+    "startDate": "2024-03-21",
+    "endDate": "2024-04-19"
+  },
+  {
+    "id": 2,
+    "name": "taurus",
+    "startDate": "2024-04-20",
+    "endDate": "2024-05-20"
+  },
+  {
+    "id": 3,
+    "startDate": "2024-05-21",
+    "endDate": "2024-06-20",
+    "name": "gemini"
+  },
+  {
+    "id": 4,
+    "name": "cancer",
+    "startDate": "2024-06-21",
+    "endDate": "2024-07-22"
+  },
+  {
+    "id": 5,
+    "name": "leo",
+    "startDate": "2024-07-23",
+    "endDate": "2024-08-22"
+  },
+  {
+    "id": 6,
+    "name": "virgo",
+    "startDate": "2024-08-23",
+    "endDate": "2024-09-22"
+  },
+  {
+    "id": 7,
+    "name": "libra",
+    "startDate": "2024-09-23",
+    "endDate": "2024-10-22"
+  },
+  {
+    "id": 8,
+    "name": "scorpio",
+    "startDate": "2024-10-23",
+    "endDate": "2024-11-21"
+  },
+  {
+    "id": 9,
+    "name": "sagittarius",
+    "startDate": "2024-11-22",
+    "endDate": "2024-12-21"
+  },
+  {
+    "id": 10,
+    "name": "capricorn",
+    "startDate": "2024-12-22",
+    "endDate": "2025-01-19"
+  },
+  {
+    "id": 11,
+    "name": "aquarius",
+    "startDate": "2025-01-20",
+    "endDate": "2025-02-18"
+  },
+  {
+    "id": 12,
+    "name": "pisces",
+    "startDate": "2025-02-19",
+    "endDate": "2025-03-20"
+  }
+]
