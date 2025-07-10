@@ -8,9 +8,9 @@ import { GlobalContext } from '@store/GlobalContext';
 import { formatDate } from '@utils/dateUtils';
 import { HoroscopeType } from '@models/Horoscope';
 import type { IDropdownOption } from '@models/DropdownOption';
+import { SIGN_TYPE_TO_NAME, SignType } from '@models/Sign';
 
 import DropDownMenu from '../common/DropDownMenu/DropDownMenu';
-import { SIGN_TYPE_TO_NAME, SignType } from '../../models/Sign';
 
 const NavMenu = () => {
   const navigate = useNavigate();

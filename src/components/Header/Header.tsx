@@ -4,11 +4,16 @@ import FlareIcon from '@mui/icons-material/Flare';
 
 import styles from './Header.module.scss';
 import lockImg from '@assets/lock.svg';
+import BurgerMenu from '../common/BurgerMenu/BurgerMenu';
 
 const Header = () => {
   return (
     <header className={`${styles.header} gradient--moonraker-remy`}>
       <div className={styles['header-content']}>
+        <div className={styles['burger-menu']}>
+          <BurgerMenu />
+        </div>
+
         <Link to="/" className={`${styles['logo-wrapper']} link`}>
           <img src={lockImg} />
           <span className="gradient--text uppercase">AstroYod</span>

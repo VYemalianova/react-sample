@@ -15,7 +15,9 @@ const Layout = () => {
       <ThemeProvider theme={MuiTheme}>
         <div className={styles['page-layout']}>
           <Header />
-          <NavMenu />
+          <div className={styles['nav-menu']}>
+            <NavMenu />
+          </div>
           <main className={styles['page-content']}>
             <Outlet />
           </main>
