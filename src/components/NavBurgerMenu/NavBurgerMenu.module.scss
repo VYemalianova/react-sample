@@ -4,8 +4,6 @@
 }
 
 .menu {
-  height: 100vh;
-  top: 60px;
   left: -16px;
 
   transform: translateX(-100%);
@@ -16,4 +14,11 @@
 .open {
   left: -0;
   transform: translateX(0);
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
 }

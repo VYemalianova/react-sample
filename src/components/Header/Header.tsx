@@ -3,15 +3,16 @@ import { Button } from '@mui/material';
 import FlareIcon from '@mui/icons-material/Flare';
 
 import styles from './Header.module.scss';
+
+import NavBurgerMenu from '../NavBurgerMenu/NavBurgerMenu';
 import lockImg from '@assets/lock.svg';
-import BurgerMenu from '../common/BurgerMenu/BurgerMenu';
 
 const Header = () => {
   return (
     <header className={`${styles.header} gradient--moonraker-remy`}>
       <div className={styles['header-content']}>
         <div className={styles['burger-menu']}>
-          <BurgerMenu />
+          <NavBurgerMenu />
         </div>
 
         <Link to="/" className={`${styles['logo-wrapper']} link`}>

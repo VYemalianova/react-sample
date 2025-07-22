@@ -5,7 +5,7 @@ import styles from './Footer.module.scss';
 import lockImg from '@assets/lock.svg';
 import emailHoroscopesImg from '@assets/email_horoscopes.svg';
 import reportsReadingsImg from '@assets/free_reports_readings.svg';
-import { loadIconsFromFolder } from '@utils/loadIcons';
+import { loadIconsFromFolder } from '@utils/LoadIcons';
 
 const SOCIAL_NETWORK_LIST = ['facebook', 'instagram', 'pinterest', 'reddit', 'twitter'];
 

@@ -70,5 +70,13 @@ export const MuiTheme = createTheme({
         },
       },
     },
+    MuiListItemText: {
+      styleOverrides: {
+        primary: {
+          fontSize: '16px',
+          fontWeight: 700,
+        },
+      },
+    },
   },
 });

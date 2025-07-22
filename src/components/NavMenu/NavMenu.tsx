@@ -4,11 +4,11 @@ import { Button } from '@mui/material';
 
 import styles from './NavMenu.module.scss';
 
-import { GlobalContext } from '@store/GlobalContext';
+import { GlobalContext } from '@store/globalContext';
 import { formatDate } from '@utils/dateUtils';
-import { HoroscopeType } from '@models/Horoscope';
-import type { IDropdownOption } from '@models/DropdownOption';
-import { SIGN_TYPE_TO_NAME, SignType } from '@models/Sign';
+import { HoroscopeType } from '@models/horoscope';
+import type { IDropdownOption } from '@models/dropdownOption';
+import { SignType } from '@models/sign';
 
 import DropDownMenu from '../common/DropDownMenu/DropDownMenu';
 
@@ -18,7 +18,7 @@ const NavMenu = () => {
   const { signs } = useContext(GlobalContext);
   const signItems = signs.map((sign) => ({
     id: sign.id,
-    value: SIGN_TYPE_TO_NAME[sign.signType as SignType],
+    value: sign.signType as SignType,
     icon: sign.icon,
     info: `(${formatDate(sign.startDate)} - ${formatDate(sign.endDate)})`,
   }));

@@ -1,4 +1,4 @@
-import type { SignType } from './Sign';
+import type { SignType } from './sign';
 
 export enum HoroscopeType {
   daily = 'daily',

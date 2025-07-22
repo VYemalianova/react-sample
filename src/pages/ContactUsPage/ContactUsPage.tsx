@@ -1,6 +1,6 @@
 import styles from './ContactUsPage.module.scss';
 
-import { loadIconsFromFolder } from '@utils/loadIcons';
+import { loadIconsFromFolder } from '@utils/LoadIcons';
 
 const SOCIAL_NETWORK_LIST = ['facebook', 'instagram', 'pinterest', 'reddit', 'twitter'];
 

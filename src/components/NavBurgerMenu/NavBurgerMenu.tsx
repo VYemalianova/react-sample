@@ -3,22 +3,24 @@ import { useContext, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton, List, ListItemButton, ListItemText } from '@mui/material';
-import { GlobalContext } from '@store/GlobalContext';
+
+import lockImg from '@assets/lock.svg';
+import { GlobalContext } from '@store/globalContext';
 import { formatDate } from '@utils/dateUtils';
-import { HoroscopeType } from '@models/Horoscope';
-import type { IDropdownOption } from '@models/DropdownOption';
-import { SIGN_TYPE_TO_NAME, SignType } from '@models/Sign';
+import { HoroscopeType } from '@models/horoscope';
+import type { IDropdownOption } from '@models/dropdownOption';
+import { SignType } from '@models/sign';
 
-import styles from './BurgerMenu.module.scss';
-import ToggleListButton from '../ToggleListButton/ToggleListButton';
+import styles from './NavBurgerMenu.module.scss';
+import ToggleListButton from '../common/ToggleListButton/ToggleListButton';
 
-const BurgerMenu = () => {
+const NavBurgerMenu = () => {
   const navigate = useNavigate();
 
   const { signs } = useContext(GlobalContext);
   const signItems = signs.map((sign) => ({
     id: sign.id,
-    value: SIGN_TYPE_TO_NAME[sign.signType as SignType],
+    value: sign.signType as SignType,
     icon: sign.icon,
     info: `(${formatDate(sign.startDate)} - ${formatDate(sign.endDate)})`,
   }));
@@ -43,9 +45,12 @@ const BurgerMenu = () => {
       <List
         sx={{
           width: '100%',
+          height: 'calc(100vh - 69px)',
           background: 'linear-gradient(to right, #e8dbf8, #fee7ed)',
           position: 'fixed',
+          top: '69px',
           padding: '8px 0',
+          overflow: 'auto',
         }}
         component="nav"
         className={`${styles.menu} ${isOpen ? styles.open : ''}`}
@@ -70,9 +75,14 @@ const BurgerMenu = () => {
           menuItems={signItems}
           menuItemClick={(option) => handleMenuItemClick(HoroscopeType.love, option)}
         />
+
+        <Link to="/" className={`${styles['logo-wrapper']} link`}>
+          <img src={lockImg} />
+          <span className="gradient--text uppercase">AstroYod</span>
+        </Link>
       </List>
     </>
   );
 };
 
-export default BurgerMenu;
+export default NavBurgerMenu;
