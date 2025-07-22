@@ -1,24 +1,21 @@
-import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 import FlareIcon from '@mui/icons-material/Flare';
 
 import styles from './Header.module.scss';
 
 import NavBurgerMenu from '../NavBurgerMenu/NavBurgerMenu';
-import lockImg from '@assets/lock.svg';
+import Logo from '../common/Logo/Logo';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 const Header = () => {
+  const isMobile = useIsMobile();
+
   return (
     <header className={`${styles.header} gradient--moonraker-remy`}>
       <div className={styles['header-content']}>
-        <div className={styles['burger-menu']}>
-          <NavBurgerMenu />
-        </div>
+        {isMobile && <NavBurgerMenu />}
 
-        <Link to="/" className={`${styles['logo-wrapper']} link`}>
-          <img src={lockImg} />
-          <span className="gradient--text uppercase">AstroYod</span>
-        </Link>
+        {!isMobile && <Logo />}
 
         <div className={styles['btns-wrapper']}>
           <Button variant="dark">Sign Up</Button>

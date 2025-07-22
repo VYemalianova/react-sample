@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton, List, ListItemButton, ListItemText } from '@mui/material';
 
-import lockImg from '@assets/lock.svg';
 import { GlobalContext } from '@store/globalContext';
 import { formatDate } from '@utils/dateUtils';
 import { HoroscopeType } from '@models/horoscope';
@@ -13,6 +12,7 @@ import { SignType } from '@models/sign';
 
 import styles from './NavBurgerMenu.module.scss';
 import ToggleListButton from '../common/ToggleListButton/ToggleListButton';
+import Logo from '../common/Logo/Logo';
 
 const NavBurgerMenu = () => {
   const navigate = useNavigate();
@@ -76,10 +76,9 @@ const NavBurgerMenu = () => {
           menuItemClick={(option) => handleMenuItemClick(HoroscopeType.love, option)}
         />
 
-        <Link to="/" className={`${styles['logo-wrapper']} link`}>
-          <img src={lockImg} />
-          <span className="gradient--text uppercase">AstroYod</span>
-        </Link>
+        <div className="mt-s ml-m">
+          <Logo onClick={toggleMenu} />
+        </div>
       </List>
     </>
   );

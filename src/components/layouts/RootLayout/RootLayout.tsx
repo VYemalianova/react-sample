@@ -8,16 +8,19 @@ import { GlobalContextProvider } from '@store/globalContext';
 
 import styles from './RootLayout.module.scss';
 import { MuiTheme } from '../../../theme';
+import { useIsMobile } from '../../../hooks/useIsMobile';
 
 const Layout = () => {
+  const isMobile = useIsMobile();
+
   return (
     <GlobalContextProvider>
       <ThemeProvider theme={MuiTheme}>
         <div className={styles['page-layout']}>
           <Header />
-          <div className={styles['nav-menu']}>
-            <NavMenu />
-          </div>
+
+          {!isMobile && <NavMenu />}
+
           <div className={styles['scrollable-content']}>
             <main className={styles['page-content']}>
               <Outlet />
