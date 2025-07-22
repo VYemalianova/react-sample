@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 import styles from './NavMenu.module.scss';
 
 import { GlobalContext } from '@store/globalContext';
-import { formatDate } from '@utils/dateUtils';
+import { formatDateRangeFromParts } from '@utils/dateUtils';
 import { HoroscopeType } from '@models/horoscope';
 import type { IDropdownOption } from '@models/dropdownOption';
 import { SignType } from '@models/sign';
@@ -19,8 +19,8 @@ const NavMenu = () => {
   const signItems = signs.map((sign) => ({
     id: sign.id,
     value: sign.signType as SignType,
-    icon: sign.icon,
-    info: `(${formatDate(sign.startDate)} - ${formatDate(sign.endDate)})`,
+    icon: sign.iconDir,
+    info: `(${formatDateRangeFromParts(sign.start, sign.end)}})`,
   }));
 
   const handleHoroscopeNavigation = (type: HoroscopeType, item: IDropdownOption): void => {

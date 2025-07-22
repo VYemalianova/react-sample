@@ -1,62 +1,110 @@
 [
   {
     "signType": "aries",
-    "startDate": "2024-03-21",
-    "endDate": "2024-04-19"
+    "element": "Fire",
+    "planet": "Mars",
+    "traits": ["energetic", "bold", "impulsive", "natural", "leader"],
+    "fact": "Aries is the first sign of the zodiac, symbolizing new beginnings and action",
+    "start": { "month": 3, "day": 21 },
+    "end": { "month": 4, "day": 19 }
   },
   {
     "signType": "taurus",
-    "startDate": "2024-04-20",
-    "endDate": "2024-05-20"
+    "element": "Earth",
+    "planet": "Venus",
+    "traits": ["loyal", "practical", "patient", "stubborn"],
+    "fact": "taurus loves comfort, food, and luxury—many are known to be true 'homebodies.'",
+    "start": { "month": 4, "day": 20 },
+    "end": { "month": 5, "day": 20 }
   },
   {
-    "startDate": "2024-05-21",
-    "endDate": "2024-06-20",
-    "signType": "gemini"
+    "signType": "gemini",
+    "element": "Air",
+    "planet": "Mercury",
+    "traits": ["talkative", "curious", "witty", "adaptable"],
+    "fact": "Geminis are known as the “twins” because of their dual nature—they can show very different sides.",
+    "start": { "month": 5, "day": 21 },
+    "end": { "month": 6, "day": 20 }
   },
   {
     "signType": "cancer",
-    "startDate": "2024-06-21",
-    "endDate": "2024-07-22"
+    "element": "Water",
+    "planet": "Moon",
+    "traits": ["nurturing", "emotional", "protective", "intuitive"],
+    "fact": "Cancers are often called the “mothers” of the zodiac due to their deeply caring nature.",
+    "start": { "month": 6, "day": 21 },
+    "end": { "month": 7, "day": 22 }
   },
   {
     "signType": "leo",
-    "startDate": "2024-07-23",
-    "endDate": "2024-08-22"
+    "element": "Fire",
+    "planet": "Sun",
+    "traits": ["confident", "creative", "charismatic", "sometimes", "dramatic"],
+    "fact": "Leos love being in the spotlight—many actors and performers are Leos.",
+    "start": { "month": 7, "day": 23 },
+    "end": { "month": 8, "day": 22 }
   },
   {
     "signType": "virgo",
-    "startDate": "2024-08-23",
-    "endDate": "2024-09-22"
+    "element": "Earth",
+    "planet": "Mercury",
+    "traits": ["detail-oriented", "analytical", "modest", "perfectionist"],
+    "fact": "Virgos are often known for their organization and problem-solving skills.",
+    "start": { "month": 8, "day": 23 },
+    "end": { "month": 9, "day": 22 }
   },
   {
     "signType": "libra",
-    "startDate": "2024-09-23",
-    "endDate": "2024-10-22"
+    "element": "Air",
+    "planet": "Venus",
+    "traits": ["diplomatic", "charming", "balanced", "indecisive"],
+    "fact": "Libras value harmony in all things—especially relationships and aesthetics.",
+    "start": { "month": 9, "day": 23 },
+    "end": { "month": 10, "day": 22 }
   },
   {
     "signType": "scorpio",
-    "startDate": "2024-10-23",
-    "endDate": "2024-11-21"
+    "element": "Water",
+    "planet": "Pluto (and Mars)",
+    "traits": ["intense", "passionate", "secretive", "determined"],
+    "fact": "Scorpios are often considered the most mysterious and emotionally deep sign.",
+    "start": { "month": 10, "day": 23 },
+    "end": { "month": 11, "day": 21 }
   },
   {
     "signType": "sagittarius",
-    "startDate": "2024-11-22",
-    "endDate": "2024-12-21"
+    "element": "Fire",
+    "planet": "Jupiter",
+    "traits": ["adventurous", "optimistic", "blunt", "philosophical"],
+    "fact": "Sagittarians crave freedom and are natural-born travelers and truth seekers.",
+    "start": { "month": 11, "day": 22 },
+    "end": { "month": 12, "day": 21 }
   },
   {
     "signType": "capricorn",
-    "startDate": "2024-12-22",
-    "endDate": "2025-01-19"
+    "element": "Earth",
+    "planet": "Saturn",
+    "traits": ["disciplined", "responsible", "ambitious", "serious"],
+    "fact": "Capricorns are goal-oriented and often seen as “old souls” even when young.",
+    "start": { "month": 12, "day": 22 },
+    "end": { "month": 1, "day": 19 }
   },
   {
     "signType": "aquarius",
-    "startDate": "2025-01-20",
-    "endDate": "2025-02-18"
+    "element": "Air",
+    "planet": "Uranus",
+    "traits": ["independent", "innovative", "quirky", "humanitarian"],
+    "fact": "Aquarians are known for being ahead of their time—many are drawn to technology and social causes.",
+    "start": { "month": 1, "day": 20 },
+    "end": { "month": 2, "day": 18 }
   },
   {
     "signType": "pisces",
-    "startDate": "2025-02-19",
-    "endDate": "2025-03-20"
+    "element": "Water",
+    "planet": "Neptune",
+    "traits": ["compassionate", "dreamy", "artistic", "empathetic"],
+    "fact": "Pisces are often very creative and emotionally intuitive—many are artists or healers.",
+    "start": { "month": 2, "day": 19 },
+    "end": { "month": 3, "day": 20 }
   }
 ]

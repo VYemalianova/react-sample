@@ -1,10 +1,15 @@
+import type { IDatePart } from './datePart';
+
 export interface ISign {
   id: string;
   signType: SignType;
-  startDate: Date;
-  endDate: Date;
-  icon: string;
-  img: string;
+  planet: string;
+  traits: string[];
+  fact: string;
+  start: IDatePart;
+  end: IDatePart;
+  iconDir: string;
+  imageDir: string;
 }
 
 export enum SignType {
