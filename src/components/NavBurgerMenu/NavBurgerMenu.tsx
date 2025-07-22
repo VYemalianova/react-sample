@@ -28,7 +28,7 @@ const NavBurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuItemClick = (type: HoroscopeType, item: IDropdownOption): void => {
-    navigate(`${type}-horoscope/${item.value}`, { state: { id: item.id, type } });
+    navigate(`horoscope/${type}/${item.value}`, { state: { id: item.id, type } });
     toggleMenu();
   };
 
@@ -56,11 +56,11 @@ const NavBurgerMenu = () => {
         className={`${styles.menu} ${isOpen ? styles.open : ''}`}
         aria-labelledby="nested-list-subheader"
       >
-        <ListItemButton component={Link} to="/daily-horoscope" onClick={toggleMenu}>
+        <ListItemButton component={Link} to="/horoscope/daily" onClick={toggleMenu}>
           <ListItemText primary="Daily Horoscope" />
         </ListItemButton>
 
-        <ListItemButton component={Link} to="/love-horoscope" onClick={toggleMenu}>
+        <ListItemButton component={Link} to="/horoscope/love" onClick={toggleMenu}>
           <ListItemText primary="Love Horoscope" />
         </ListItemButton>
 

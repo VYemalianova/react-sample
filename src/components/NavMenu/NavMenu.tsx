@@ -24,17 +24,17 @@ const NavMenu = () => {
   }));
 
   const handleHoroscopeNavigation = (type: HoroscopeType, item: IDropdownOption): void => {
-    navigate(`${type}-horoscope/${item.value}`, { state: { id: item.id, type } });
+    navigate(`horoscope/${type}/${item.value}`, { state: { id: item.id, type } });
   };
 
   return (
     <div className={`${styles['horoscope-nav-wrapper']} gradient--selago-wisppink`}>
       <nav className={styles['horoscope-nav']}>
-        <Button component={Link} to="/daily-horoscope" sx={{ fontWeight: 700 }} variant="text">
+        <Button component={Link} to="/horoscope/daily" sx={{ fontWeight: 700 }} variant="text">
           Daily Horoscope
         </Button>
 
-        <Button component={Link} to="/love-horoscope" sx={{ fontWeight: 700 }} variant="text">
+        <Button component={Link} to="/horoscope/love" sx={{ fontWeight: 700 }} variant="text">
           Love Horoscope
         </Button>
 
