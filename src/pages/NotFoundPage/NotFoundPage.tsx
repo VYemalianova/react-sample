@@ -41,7 +41,7 @@ const NotFoundPage = () => {
               <li>
                 <span>
                   To read{' '}
-                  <Link to="/daily-horoscope" className="link__underline">
+                  <Link to="/horoscope/daily" className="link__underline">
                     Daily Horoscope
                   </Link>
                 </span>
@@ -49,7 +49,7 @@ const NotFoundPage = () => {
               <li>
                 <span>
                   To read{' '}
-                  <Link to="/love-horoscope" className="link__underline">
+                  <Link to="/horoscope/love" className="link__underline">
                     Love Horoscope
                   </Link>
                 </span>

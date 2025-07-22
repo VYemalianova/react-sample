@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import styles from './DropDownMenu.module.scss';
 
-import type { IDropdownOption } from '@models/DropdownOption';
+import type { IDropdownOption } from '@models/dropdownOption';
 
 interface IProps {
   label: string;

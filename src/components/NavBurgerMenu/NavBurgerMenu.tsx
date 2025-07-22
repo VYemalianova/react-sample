@@ -3,30 +3,32 @@ import { useContext, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton, List, ListItemButton, ListItemText } from '@mui/material';
-import { GlobalContext } from '@store/GlobalContext';
-import { formatDate } from '@utils/dateUtils';
-import { HoroscopeType } from '@models/Horoscope';
-import type { IDropdownOption } from '@models/DropdownOption';
-import { SIGN_TYPE_TO_NAME, SignType } from '@models/Sign';
 
-import styles from './BurgerMenu.module.scss';
-import ToggleListButton from '../ToggleListButton/ToggleListButton';
+import { GlobalContext } from '@store/globalContext';
+import { formatDateRangeFromParts } from '@utils/dateUtils';
+import { HoroscopeType } from '@models/horoscope';
+import type { IDropdownOption } from '@models/dropdownOption';
+import { SignType } from '@models/sign';
 
-const BurgerMenu = () => {
+import styles from './NavBurgerMenu.module.scss';
+import ToggleListButton from '../common/ToggleListButton/ToggleListButton';
+import Logo from '../common/Logo/Logo';
+
+const NavBurgerMenu = () => {
   const navigate = useNavigate();
 
   const { signs } = useContext(GlobalContext);
   const signItems = signs.map((sign) => ({
     id: sign.id,
-    value: SIGN_TYPE_TO_NAME[sign.signType as SignType],
-    icon: sign.icon,
-    info: `(${formatDate(sign.startDate)} - ${formatDate(sign.endDate)})`,
+    value: sign.signType as SignType,
+    icon: sign.iconDir,
+    info: `(${formatDateRangeFromParts(sign.start, sign.end)})`,
   }));
 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuItemClick = (type: HoroscopeType, item: IDropdownOption): void => {
-    navigate(`${type}-horoscope/${item.value}`, { state: { id: item.id, type } });
+    navigate(`horoscope/${type}/${item.value}`, { state: { id: item.id, type } });
     toggleMenu();
   };
 
@@ -43,19 +45,22 @@ const BurgerMenu = () => {
       <List
         sx={{
           width: '100%',
+          height: 'calc(100vh - 69px)',
           background: 'linear-gradient(to right, #e8dbf8, #fee7ed)',
           position: 'fixed',
+          top: '69px',
           padding: '8px 0',
+          overflow: 'auto',
         }}
         component="nav"
         className={`${styles.menu} ${isOpen ? styles.open : ''}`}
         aria-labelledby="nested-list-subheader"
       >
-        <ListItemButton component={Link} to="/daily-horoscope" onClick={toggleMenu}>
+        <ListItemButton component={Link} to="/horoscope/daily" onClick={toggleMenu}>
           <ListItemText primary="Daily Horoscope" />
         </ListItemButton>
 
-        <ListItemButton component={Link} to="/love-horoscope" onClick={toggleMenu}>
+        <ListItemButton component={Link} to="/horoscope/love" onClick={toggleMenu}>
           <ListItemText primary="Love Horoscope" />
         </ListItemButton>
 
@@ -70,9 +75,13 @@ const BurgerMenu = () => {
           menuItems={signItems}
           menuItemClick={(option) => handleMenuItemClick(HoroscopeType.love, option)}
         />
+
+        <div className="mt-s ml-m">
+          <Logo onClick={toggleMenu} />
+        </div>
       </List>
     </>
   );
 };
 
-export default BurgerMenu;
+export default NavBurgerMenu;

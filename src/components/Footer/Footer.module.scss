@@ -26,13 +26,6 @@
   }
 }
 
-.logo-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-}
-
 .social-media-icons {
   display: flex;
   gap: 32px;
@@ -47,11 +40,7 @@
 .more-links-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-
-  a {
-    @include mixins.text(16px, 700, 20px);
-  }
+  gap: 8px;
 }
 
 .useful-link-wrapper {

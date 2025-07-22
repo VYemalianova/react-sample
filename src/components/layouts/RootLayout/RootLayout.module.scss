@@ -6,14 +6,14 @@
   flex-direction: column;
 }
 
-.page-content {
+.scrollable-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
   overflow: auto;
-  @include mixins.text(20px, 400, 32px);
 }
 
-@media (max-width: 820px) {
-  .nav-menu {
-    display: none;
-  }
+.page-content {
+  flex: 1;
+  @include mixins.text(20px, 400, 32px);
 }
