@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import styles from './Logo.module.scss';
-
 import lockImg from '@assets/lock.svg';
+
+import styles from './Logo.module.scss';
 
 const Logo = ({ onClick }: { onClick?: () => void }) => {
   return (

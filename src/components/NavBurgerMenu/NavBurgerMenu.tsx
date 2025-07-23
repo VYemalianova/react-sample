@@ -4,11 +4,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton, List, ListItemButton, ListItemText } from '@mui/material';
 
-import { GlobalContext } from '@store/globalContext';
-import { formatDateRangeFromParts } from '@utils/dateUtils';
-import { HoroscopeType } from '@models/horoscope';
-import type { IDropdownOption } from '@models/dropdownOption';
-import { SignType } from '@models/sign';
+import { GlobalContext } from '@store/context';
+import { HoroscopeType } from '@models/horoscope.model';
+import type { IDropdownOption } from '@models/dropdownOption.model';
+import { SignType } from '@models/sign.model';
+import { getFormattedDateRange } from '@utils/dateUtils';
 
 import styles from './NavBurgerMenu.module.scss';
 import ToggleListButton from '../common/ToggleListButton/ToggleListButton';
@@ -22,7 +22,7 @@ const NavBurgerMenu = () => {
     id: sign.id,
     value: sign.signType as SignType,
     icon: sign.iconDir,
-    info: `(${formatDateRangeFromParts(sign.start, sign.end)})`,
+    info: `(${getFormattedDateRange(sign.startDate, sign.endDate)})`,
   }));
 
   const [isOpen, setIsOpen] = useState(false);

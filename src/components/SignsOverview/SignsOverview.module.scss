@@ -1,0 +1,24 @@
+@use '@styles/mixins' as mixins;
+
+.sign-overview-wrapper {
+  background-color: #fff;
+  padding: 16px;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btns-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

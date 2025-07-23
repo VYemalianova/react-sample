@@ -35,11 +35,11 @@ $sides: (top, bottom, left, right);
 @each $name, $space in $spaceamounts {
   @each $side in $sides {
     .m#{string.slice($side, 0, 1)}-#{$name} {
-      margin-#{$side}: #{$space};
+      margin-#{$side}: #{$space} !important;
     }
 
     .p#{string.slice($side, 0, 1)}-#{$name} {
-      padding-#{$side}: #{$space};
+      padding-#{$side}: #{$space} !important;
     }
   }
 }

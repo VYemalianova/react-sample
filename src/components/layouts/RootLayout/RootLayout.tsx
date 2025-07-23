@@ -4,11 +4,11 @@ import { Outlet } from 'react-router-dom';
 import Header from '@components/Header/Header';
 import Footer from '@components/Footer/Footer';
 import NavMenu from '@components/NavMenu/NavMenu';
-import { GlobalContextProvider } from '@store/globalContext';
+import { GlobalContextProvider } from '@store/context';
+import { useIsMobile } from '@hooks/useIsMobile';
 
 import styles from './RootLayout.module.scss';
 import { MuiTheme } from '../../../theme';
-import { useIsMobile } from '../../../hooks/useIsMobile';
 
 const Layout = () => {
   const isMobile = useIsMobile();

@@ -1,0 +1,17 @@
+.sign-overview-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.sign-tile {
+  min-width: 0;
+  max-width: 460px;
+}
+
+@media (max-width: 1000px) {
+  .sign-overview-list {
+    justify-content: center;
+  }
+}

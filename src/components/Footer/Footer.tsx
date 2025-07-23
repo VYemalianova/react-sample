@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-import styles from './Footer.module.scss';
-
 import emailHoroscopesImg from '@assets/email_horoscopes.svg';
 import reportsReadingsImg from '@assets/free_reports_readings.svg';
 import { loadIconsFromFolder } from '@utils/loadIcons';
+
+import styles from './Footer.module.scss';
 import Logo from '../common/Logo/Logo';
 
 const SOCIAL_NETWORK_LIST = ['facebook', 'instagram', 'pinterest', 'reddit', 'twitter'];
@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
 
             <div className={styles['more-links-wrapper']}>
-              <Link to="/about-us" className="link">
+              <Link to="/home" state={{ scrollTo: 'about-us' }} className="link">
                 About us
               </Link>
               <Link to="/contact-us" className="link">

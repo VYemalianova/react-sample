@@ -1,11 +1,11 @@
 import { Button } from '@mui/material';
 import FlareIcon from '@mui/icons-material/Flare';
 
-import styles from './Header.module.scss';
+import { useIsMobile } from '@hooks/useIsMobile';
 
+import styles from './Header.module.scss';
 import NavBurgerMenu from '../NavBurgerMenu/NavBurgerMenu';
 import Logo from '../common/Logo/Logo';
-import { useIsMobile } from '../../hooks/useIsMobile';
 
 const Header = () => {
   const isMobile = useIsMobile();

@@ -1,8 +1,8 @@
 import { isRouteErrorResponse, Link, useRouteError } from 'react-router';
 
-import styles from './ErrorPage.module.scss';
-
 import errorImg from '@assets/error.png';
+
+import styles from './ErrorPage.module.scss';
 
 const ErrorPage = () => {
   const error = useRouteError() as Error;
