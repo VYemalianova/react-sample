@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { Button } from '@mui/material';
 
-import { GlobalContext } from '@store/context';
+import { GlobalContext } from '@store/globalContext';
 import { getFormattedDateRange } from '@utils/dateUtils';
 import { HoroscopeType } from '@models/horoscope.model';
 import type { IDropdownOption } from '@models/dropdownOption.model';

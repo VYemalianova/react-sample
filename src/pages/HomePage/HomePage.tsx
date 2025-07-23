@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 
 import HoroscopeBanner from '@components/HoroscopeBanner/HoroscopeBanner';
@@ -9,13 +9,16 @@ import styles from './HomePage.module.scss';
 
 const HomePage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const aboutUsSectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (location.state?.scrollTo === 'about-us' && aboutUsSectionRef) {
       aboutUsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+
+      navigate(location.pathname, { replace: true, state: {} });
     }
-  }, [location]);
+  }, [location, navigate]);
 
   return (
     <div>

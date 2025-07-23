@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton, List, ListItemButton, ListItemText } from '@mui/material';
 
-import { GlobalContext } from '@store/context';
+import { GlobalContext } from '@store/globalContext';
 import { HoroscopeType } from '@models/horoscope.model';
 import type { IDropdownOption } from '@models/dropdownOption.model';
 import { SignType } from '@models/sign.model';

@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Divider } from '@mui/material';
 
-import { GlobalContext } from '@store/context';
+import { GlobalContext } from '@store/globalContext';
 import { useIsMobile } from '@hooks/useIsMobile';
 import type { ISign } from '@models/sign.model';
 

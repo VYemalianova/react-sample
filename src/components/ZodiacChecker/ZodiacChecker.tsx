@@ -15,7 +15,7 @@ dayjs.extend(isSameOrBefore);
 
 import { buildDateFromParts } from '@utils/dateUtils';
 import { generateNumberArray } from '@utils/utils';
-import { GlobalContext } from '@store/context';
+import { GlobalContext } from '@store/globalContext';
 import { type ISign } from '@models/sign.model';
 import { DateFormat } from '@models/date.types';
 

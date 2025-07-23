@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '@components/Header/Header';
 import Footer from '@components/Footer/Footer';
 import NavMenu from '@components/NavMenu/NavMenu';
-import { GlobalContextProvider } from '@store/context';
+import { GlobalContextProvider } from '@store/globalContext';
 import { useIsMobile } from '@hooks/useIsMobile';
 
 import styles from './RootLayout.module.scss';

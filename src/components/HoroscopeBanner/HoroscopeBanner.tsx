@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Avatar } from '@mui/material';
 import dayjs from 'dayjs';
 
-import { GlobalContext } from '@store/context';
+import { GlobalContext } from '@store/globalContext';
 import { getFormattedDateRange } from '@utils/dateUtils';
 import type { HoroscopeType } from '@models/horoscope.model';
 import { DateFormat } from '@models/date.types';
