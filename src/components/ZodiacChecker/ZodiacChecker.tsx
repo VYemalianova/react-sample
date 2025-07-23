@@ -27,7 +27,7 @@ const ZodiacSignChecker = ({ onSignSelect }: { onSignSelect: (sign: ISign) => vo
   const { signs } = useContext(GlobalContext);
   const [form, setForm] = useState({
     day: 1,
-    month: 1,
+    month: 0,
   });
   const daysInSelectedMonth = dayjs({ year: LEAP_YEAR, month: form.month }).daysInMonth();
   const daysArray = generateNumberArray(daysInSelectedMonth);
