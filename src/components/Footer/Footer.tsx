@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
 
             <div className={styles['more-links-wrapper']}>
-              <Link to="/about-us" className="link">
+              <Link to="/home" state={{ scrollTo: 'about-us' }} className="link">
                 About us
               </Link>
               <Link to="/contact-us" className="link">
