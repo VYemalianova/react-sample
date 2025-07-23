@@ -1,13 +1,14 @@
 import { useContext, useState } from 'react';
-import type { ISign } from '../../models/sign.model';
-import ZodiacSignChecker from '../ZodiacChecker/ZodiacChecker';
+import { Divider } from '@mui/material';
+
+import { GlobalContext } from '@store/context';
+import { useIsMobile } from '@hooks/useIsMobile';
+import type { ISign } from '@models/sign.model';
 
 import style from './HoroscopeDashboard.module.scss';
-import { GlobalContext } from '../../store/context';
-import SignsOverview from '../SignsOverview/SignsOverview';
-import { useIsMobile } from '@hooks/useIsMobile';
-import { Divider } from '@mui/material';
+import ZodiacSignChecker from '../ZodiacChecker/ZodiacChecker';
 import Popup from '../common/Popup/Popup';
+import SignsOverview from '../SignsOverview/SignsOverview';
 
 const HoroscopeDashboard = () => {
   const { signs } = useContext(GlobalContext);

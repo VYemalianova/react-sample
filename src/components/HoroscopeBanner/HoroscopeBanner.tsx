@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import { Avatar } from '@mui/material';
-
-import styles from './HoroscopeBanner.module.scss';
+import dayjs from 'dayjs';
 
 import { GlobalContext } from '@store/context';
 import { getFormattedDateRange } from '@utils/dateUtils';
 import type { HoroscopeType } from '@models/horoscope.model';
 import { DateFormat } from '@models/date.types';
-import dayjs from 'dayjs';
+
+import styles from './HoroscopeBanner.module.scss';
 
 interface IProps {
   type: HoroscopeType;

@@ -3,8 +3,9 @@ import { Avatar, Collapse, List, ListItemButton, ListItemIcon, ListItemText } fr
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
-import styles from './ToggleListButton.module.scss';
 import type { IDropdownOption } from '@models/dropdownOption.model';
+
+import styles from './ToggleListButton.module.scss';
 
 const ToggleListButton = ({
   label,

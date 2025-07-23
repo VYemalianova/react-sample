@@ -2,9 +2,9 @@ import { Avatar, Button, Menu, MenuItem } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useState } from 'react';
 
-import styles from './DropDownMenu.module.scss';
-
 import type { IDropdownOption } from '@models/dropdownOption.model';
+
+import styles from './DropDownMenu.module.scss';
 
 interface IProps {
   label: string;

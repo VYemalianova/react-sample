@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 
-import type { HoroscopeType } from '../../models/horoscope.model';
-import HoroscopeBanner from '../../components/HoroscopeBanner/HoroscopeBanner';
+import type { HoroscopeType } from '@models/horoscope.model';
+import HoroscopeBanner from '@components/HoroscopeBanner/HoroscopeBanner';
 
 const Horoscopes = () => {
   const { type } = useParams<{ type: HoroscopeType }>();

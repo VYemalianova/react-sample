@@ -2,14 +2,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { Button } from '@mui/material';
 
-import styles from './NavMenu.module.scss';
-
 import { GlobalContext } from '@store/context';
 import { getFormattedDateRange } from '@utils/dateUtils';
 import { HoroscopeType } from '@models/horoscope.model';
 import type { IDropdownOption } from '@models/dropdownOption.model';
 import { SignType } from '@models/sign.model';
 
+import styles from './NavMenu.module.scss';
 import DropDownMenu from '../common/DropDownMenu/DropDownMenu';
 
 const NavMenu = () => {

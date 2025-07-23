@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import styles from './NotFoundPage.module.scss';
-
 import notFoundImg from '@assets/404.png';
+
+import styles from './NotFoundPage.module.scss';
 
 const NotFoundPage = () => {
   return (

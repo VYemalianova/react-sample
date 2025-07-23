@@ -3,9 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 import signsData from '@data/signs.json';
 import { SignType, type ISign } from '@models/sign.model';
-import { loadIconsFromFolder } from '@utils/loadIcons';
 import { DateFormat } from '@models/date.types';
-import { buildDateFromParts } from '../utils/dateUtils';
+import { loadIconsFromFolder } from '@utils/loadIcons';
+import { buildDateFromParts } from '@utils/dateUtils';
 
 interface IGlobalContext {
   signs: ISign[];

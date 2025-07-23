@@ -3,7 +3,7 @@ import objectSupport from 'dayjs/plugin/objectSupport';
 
 dayjs.extend(objectSupport);
 
-import { DateFormat, type IDatePart } from '../models/date.types';
+import { DateFormat, type IDatePart } from '@models/date.types';
 
 export const buildDateFromParts = (dateParts: IDatePart, format: DateFormat): string => {
   const today = dayjs();

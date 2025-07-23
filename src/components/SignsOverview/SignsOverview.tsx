@@ -1,12 +1,11 @@
 import { Avatar, Button } from '@mui/material';
 import PreviewIcon from '@mui/icons-material/Preview';
-
-import styles from './SignsOverview.module.scss';
-
-import type { ISign } from '../../models/sign.model';
-import { useIsMobile } from '../../hooks/useIsMobile';
 import { useState } from 'react';
 
+import type { ISign } from '@models/sign.model';
+import { useIsMobile } from '@hooks/useIsMobile';
+
+import styles from './SignsOverview.module.scss';
 interface IProps {
   sign: ISign;
   isPreview?: boolean;

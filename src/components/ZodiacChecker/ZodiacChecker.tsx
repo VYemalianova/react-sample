@@ -13,13 +13,13 @@ import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
 dayjs.extend(isSameOrAfter);
 dayjs.extend(isSameOrBefore);
 
-import styles from './ZodiacChecker.module.scss';
 import { buildDateFromParts } from '@utils/dateUtils';
-import { generateNumberArray } from '../../utils/utils';
+import { generateNumberArray } from '@utils/utils';
+import { GlobalContext } from '@store/context';
+import { type ISign } from '@models/sign.model';
+import { DateFormat } from '@models/date.types';
 
-import { GlobalContext } from '../../store/context';
-import { type ISign } from '../../models/sign.model';
-import { DateFormat } from '../../models/date.types';
+import styles from './ZodiacChecker.module.scss';
 
 const LEAP_YEAR = 2024;
 
