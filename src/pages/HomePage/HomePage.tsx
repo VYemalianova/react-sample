@@ -1,4 +1,13 @@
+import HoroscopeBanner from '@components/HoroscopeBanner/HoroscopeBanner';
+import { HoroscopeType } from '@models/horoscope.model';
+import HoroscopeDashboard from '../../components/HoroscopeDashboard/HoroscopeDashboard';
+
 const HomePage = () => {
-  return <div className="content-wrapper">Home page</div>;
+  return (
+    <div>
+      <HoroscopeBanner type={HoroscopeType.daily} />
+      <HoroscopeDashboard />
+    </div>
+  );
 };
 export default HomePage;

@@ -1,13 +1,12 @@
-import type { IDatePart } from './datePart';
-
 export interface ISign {
   id: string;
   signType: SignType;
   planet: string;
   traits: string[];
   fact: string;
-  start: IDatePart;
-  end: IDatePart;
+  element: string;
+  startDate: string;
+  endDate: string;
   iconDir: string;
   imageDir: string;
 }

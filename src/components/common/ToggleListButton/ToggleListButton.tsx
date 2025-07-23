@@ -4,7 +4,7 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
 import styles from './ToggleListButton.module.scss';
-import type { IDropdownOption } from '@models/dropdownOption';
+import type { IDropdownOption } from '@models/dropdownOption.model';
 
 const ToggleListButton = ({
   label,

@@ -1,26 +1,27 @@
 import dayjs from 'dayjs';
-import type { IDatePart } from '../models/datePart';
+import objectSupport from 'dayjs/plugin/objectSupport';
 
-export const getWeekday = (date: Date) => {
-  return dayjs(date).format('dddd');
+dayjs.extend(objectSupport);
+
+import { DateFormat, type IDatePart } from '../models/date.types';
+
+export const buildDateFromParts = (dateParts: IDatePart, format: DateFormat): string => {
+  const today = dayjs();
+
+  const year = dateParts.year ?? today.year();
+  const month = dateParts.month ? dateParts.month - 1 : today.month();
+  const day = dateParts.day ?? today.date();
+
+  return dayjs({ year, month, day }).format(format);
 };
 
-export const formatDate = (format = 'MMM D') => {
-  return dayjs().format(format);
-};
-
-export const formatDateFromParts = (dateParts: IDatePart, format = 'MMM D') => {
-  const formattedDate = dayjs()
-    .set('year', dateParts.year ?? dayjs().year())
-    .set('month', dateParts.month - 1)
-    .set('date', dateParts.day);
-
-  return formattedDate.format(format);
-};
-
-export const formatDateRangeFromParts = (start: IDatePart, end: IDatePart) => {
-  const startFormatted = formatDateFromParts(start);
-  const endFormatted = formatDateFromParts(end);
+export const getFormattedDateRange = (
+  start: string,
+  end: string,
+  format = DateFormat.MonthDayShort
+) => {
+  const startFormatted = dayjs(start).format(format);
+  const endFormatted = dayjs(end).format(format);
 
   return `${startFormatted} - ${endFormatted}`;
 };

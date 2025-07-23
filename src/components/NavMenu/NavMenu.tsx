@@ -4,11 +4,11 @@ import { Button } from '@mui/material';
 
 import styles from './NavMenu.module.scss';
 
-import { GlobalContext } from '@store/globalContext';
-import { formatDateRangeFromParts } from '@utils/dateUtils';
-import { HoroscopeType } from '@models/horoscope';
-import type { IDropdownOption } from '@models/dropdownOption';
-import { SignType } from '@models/sign';
+import { GlobalContext } from '@store/context';
+import { getFormattedDateRange } from '@utils/dateUtils';
+import { HoroscopeType } from '@models/horoscope.model';
+import type { IDropdownOption } from '@models/dropdownOption.model';
+import { SignType } from '@models/sign.model';
 
 import DropDownMenu from '../common/DropDownMenu/DropDownMenu';
 
@@ -20,7 +20,7 @@ const NavMenu = () => {
     id: sign.id,
     value: sign.signType as SignType,
     icon: sign.iconDir,
-    info: `(${formatDateRangeFromParts(sign.start, sign.end)}})`,
+    info: `(${getFormattedDateRange(sign.startDate, sign.endDate)}})`,
   }));
 
   const handleHoroscopeNavigation = (type: HoroscopeType, item: IDropdownOption): void => {

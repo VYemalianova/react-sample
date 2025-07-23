@@ -1,0 +1,11 @@
+@use '@styles/mixins' as mixins;
+
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btns-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
