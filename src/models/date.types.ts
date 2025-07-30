@@ -7,6 +7,7 @@ export interface IDatePart {
 export enum DateFormat {
   FullDate = 'YYYY-MM-DD',
   FullDateTime = 'YYYY-MM-DD HH:mm:ss',
+  FullDayDate = 'dddd, MMMM D, YYYY',
   MonthDayYearLong = 'MMMM D, YYYY',
   MonthDayShort = 'MMM D',
   MonthDayLong = 'MMMM D',

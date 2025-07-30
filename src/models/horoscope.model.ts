@@ -13,4 +13,6 @@ export interface IHoroscope {
   horoscopeType: HoroscopeType;
   signType: SignType;
   description: string;
+  startDate: string;
+  endDate: string;
 }
