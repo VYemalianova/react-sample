@@ -17,7 +17,7 @@ import Logo from '../common/Logo/Logo';
 const NavBurgerMenu = () => {
   const navigate = useNavigate();
 
-  const { signs } = useContext(GlobalContext);
+  const { signs, user } = useContext(GlobalContext);
   const signItems = signs.map((sign) => ({
     id: sign.id,
     value: sign.signType as SignType,
@@ -27,8 +27,13 @@ const NavBurgerMenu = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleMenuItemClick = (type: HoroscopeType, item: IDropdownOption): void => {
-    navigate(`horoscope/${type}/${item.value}`, { state: { id: item.id, type } });
+  const handleMenuItemClick = (type: HoroscopeType, item?: IDropdownOption): void => {
+    if (item) {
+      navigate(`horoscope/${type}/${item.value}`, { state: { id: item.id, type } });
+    } else {
+      navigate(`horoscope/${type}`);
+    }
+
     toggleMenu();
   };
 
@@ -56,13 +61,28 @@ const NavBurgerMenu = () => {
         className={`${styles.menu} ${isOpen ? styles.open : ''}`}
         aria-labelledby="nested-list-subheader"
       >
-        <ListItemButton component={Link} to="/horoscope/daily" onClick={toggleMenu}>
-          <ListItemText primary="Daily Horoscope" />
-        </ListItemButton>
+        {!user && (
+          <>
+            <ListItemButton component={Link} to="/horoscope/daily" onClick={toggleMenu}>
+              <ListItemText primary="Daily Horoscope" />
+            </ListItemButton>
 
-        <ListItemButton component={Link} to="/horoscope/love" onClick={toggleMenu}>
-          <ListItemText primary="Love Horoscope" />
-        </ListItemButton>
+            <ListItemButton component={Link} to="/horoscope/love" onClick={toggleMenu}>
+              <ListItemText primary="Love Horoscope" />
+            </ListItemButton>
+          </>
+        )}
+
+        {user && (
+          <ToggleListButton
+            label="Horoscope Type"
+            menuItems={Object.entries(HoroscopeType).map(([key, value]) => ({
+              id: key,
+              value,
+            }))}
+            menuItemClick={(option) => handleMenuItemClick(option.id as HoroscopeType)}
+          />
+        )}
 
         <ToggleListButton
           label="Daily Sign Horoscope"

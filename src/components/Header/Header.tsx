@@ -6,9 +6,12 @@ import { useIsMobile } from '@hooks/useIsMobile';
 import styles from './Header.module.scss';
 import NavBurgerMenu from '../NavBurgerMenu/NavBurgerMenu';
 import Logo from '../common/Logo/Logo';
+import { useContext } from 'react';
+import { GlobalContext } from '../../store/globalContext';
 
-const Header = () => {
+const Header = ({ onSignUp }: { onSignUp: () => void }) => {
   const isMobile = useIsMobile();
+  const { user } = useContext(GlobalContext);
 
   return (
     <header className={`${styles.header} gradient--moonraker-remy`}>
@@ -18,7 +21,11 @@ const Header = () => {
         {!isMobile && <Logo />}
 
         <div className={styles['btns-wrapper']}>
-          <Button variant="dark">Sign Up</Button>
+          {!user && (
+            <Button variant="dark" onClick={onSignUp}>
+              Sign In
+            </Button>
+          )}
           <Button variant="gradient" endIcon={<FlareIcon />}>
             Live Psychics
           </Button>

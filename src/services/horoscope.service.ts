@@ -1,8 +1,7 @@
 import type { IHoroscope } from '../models/horoscope.model';
 import type { IResponse } from '../models/response';
 import { buildQueryString } from '../utils/utils';
-
-const host = 'http://localhost:3000';
+import { apiFetch } from './api.service';
 
 export const fetchHoroscope = async (
   type: string,
@@ -11,18 +10,17 @@ export const fetchHoroscope = async (
   endDate?: string
 ) => {
   const query = buildQueryString({
-    horoscope: type,
+    horoscopeType: type,
     signType: sign,
     ...(startDate && { startDate }),
     ...(endDate && { endDate }),
   });
 
-  const response = await fetch(`${host}/horoscope?${query}`);
-  const fetchedData = (await response.json()) as IResponse<IHoroscope>;
+  const response = (await apiFetch(`horoscope?${query}`)) as IResponse<IHoroscope>;
 
-  if (!fetchedData.success) {
+  if (!response.success) {
     throw new Error('An unknown error occurred.');
   }
 
-  return fetchedData.data;
+  return response.data;
 };
