@@ -1,4 +1,4 @@
-import { createContext, type ReactNode } from 'react';
+import { createContext, useEffect, useState, type ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import signsData from '@data/signs.json';
@@ -6,9 +6,14 @@ import { SignType, type ISign } from '@models/sign.model';
 import { DateFormat } from '@models/date.types';
 import { loadIconsFromFolder } from '@utils/loadIcons';
 import { buildDateFromParts } from '@utils/dateUtils';
+import type { IUser } from '../models/user.model';
+import { localStorageKeys } from '../models/localStorageKeys';
 
 interface IGlobalContext {
   signs: ISign[];
+  user: IUser | null;
+  setAuthData: (user: IUser, token: string) => void;
+  clearAuthData: () => void;
 }
 
 const LEAP_YEAR = 2024;
@@ -41,11 +46,47 @@ const signs: ISign[] = signsData.map((sign) => ({
 
 export const GlobalContext = createContext<IGlobalContext>({
   signs: [],
+  user: null,
+  setAuthData: () => {},
+  clearAuthData: () => {},
 });
 
 export const GlobalContextProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState<IUser | null>(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem(localStorageKeys.USER_KEY);
+
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('auth:logout', clearAuthData);
+
+    return () => window.removeEventListener('auth:logout', clearAuthData);
+  }, []);
+
+  const setAuthData = (user: IUser, token: string) => {
+    localStorage.setItem(localStorageKeys.USER_KEY, JSON.stringify(user));
+    localStorage.setItem(localStorageKeys.TOKEN_KEY, token);
+
+    setUser(user);
+  };
+
+  const clearAuthData = () => {
+    localStorage.removeItem(localStorageKeys.USER_KEY);
+    localStorage.removeItem(localStorageKeys.TOKEN_KEY);
+
+    setUser(null);
+  };
+
   const contextValue = {
-    signs: signs,
+    signs,
+    user,
+    setAuthData,
+    clearAuthData,
   };
 
   return <GlobalContext.Provider value={contextValue}>{children}</GlobalContext.Provider>;

@@ -50,12 +50,20 @@ export const MuiTheme = createTheme({
               props: { variant: 'text' },
               style: {
                 color: '#08030e',
+                textDecoration: 'underline',
                 '&:hover': {
                   color: '#630cd2',
                   boxShadow: 'none',
                   outline: 'none',
                   backgroundColor: 'transparent',
+                  textDecoration: 'underline',
                 },
+              },
+            },
+            {
+              props: { variant: 'outlined' },
+              style: {
+                color: '#08030e',
               },
             },
           ],

@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Divider } from '@mui/material';
+import { Button, Divider } from '@mui/material';
 
 import { GlobalContext } from '@store/globalContext';
 import { useIsMobile } from '@hooks/useIsMobile';
@@ -7,7 +7,7 @@ import type { ISign } from '@models/sign.model';
 
 import style from './HoroscopeDashboard.module.scss';
 import ZodiacSignChecker from '../ZodiacChecker/ZodiacChecker';
-import Popup from '../common/Popup/Popup';
+import DialogWrapper from '../common/DialogWrapper/DialogWrapper';
 import SignsOverview from '../SignsOverview/SignsOverview';
 
 const HoroscopeDashboard = () => {
@@ -31,9 +31,14 @@ const HoroscopeDashboard = () => {
       <div className="content-wrapper mt-xl mb-xl pr-m pl-m">
         <ZodiacSignChecker onSignSelect={handleShowDetails} />
         {!isMobile && shouldDisplay && (
-          <Popup isOpen={showZodiacResultOverview} handleClose={handleHideSignsOverview}>
+          <DialogWrapper isOpen={showZodiacResultOverview} onClose={handleHideSignsOverview}>
             <SignsOverview sign={selectedSign} />
-          </Popup>
+            <div className="btn-actions">
+              <Button variant="light" onClick={handleHideSignsOverview}>
+                OK
+              </Button>
+            </div>
+          </DialogWrapper>
         )}
 
         {isMobile && shouldDisplay && (

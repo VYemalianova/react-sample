@@ -110,6 +110,12 @@ h4 {
   background: linear-gradient(to bottom, variables.$capric, variables.$sagittarius);
 }
 
+.btn-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
 @media (max-width: 1000px) {
   h1 {
     font-size: 34px !important;
