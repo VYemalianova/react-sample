@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@mui/material';
-import { useEffect, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Suspense, useCallback, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import Header from '@components/Header/Header';
 import Footer from '@components/Footer/Footer';
@@ -15,33 +15,26 @@ import { MuiTheme } from '../../../theme';
 
 const Layout = () => {
   const isMobile = useIsMobile();
-  const location = useLocation();
-  const [loading, setLoading] = useState(false);
 
   const [showAuthModal, setShowAuthModal] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    const timeout = setTimeout(() => setLoading(false), 500);
-    return () => clearTimeout(timeout);
-  }, [location]);
+  const handleShowAuthModal = useCallback(() => setShowAuthModal(!showAuthModal), []);
 
   return (
     <GlobalContextProvider>
       <ThemeProvider theme={MuiTheme}>
         <div className={styles['page-layout']}>
-          <Header onSignUp={() => setShowAuthModal(true)} />
+          <Header onSignUp={handleShowAuthModal} />
 
           {!isMobile && <NavMenu />}
 
           <div className={styles['scrollable-content']}>
             <main className={styles['page-content']}>
-              {loading && <PageLoader />}
-              {!loading && <Outlet />}
+              <Suspense fallback={<PageLoader />}>
+                <Outlet />
+              </Suspense>
 
-              {showAuthModal && (
-                <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
-              )}
+              {showAuthModal && <AuthModal isOpen={showAuthModal} onClose={handleShowAuthModal} />}
             </main>
             <Footer />
           </div>

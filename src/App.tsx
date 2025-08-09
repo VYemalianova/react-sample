@@ -1,13 +1,17 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import { lazy } from 'react';
 
 import RootLayout from '@components/layouts/RootLayout/RootLayout';
-import HoroscopeRootLayout from '@components/layouts/HoroscopeRootLayout/HoroscopeRootLayout';
 import ErrorPage from '@pages/ErrorPage/ErrorPage';
-import HomePage from '@pages/HomePage/HomePage';
-import NotFoundPage from '@pages/NotFoundPage/NotFoundPage';
-import ContactUsPage from '@pages/ContactUsPage/ContactUsPage';
-import HoroscopeDetailsPage from '@pages/HoroscopeDetailsPage/HoroscopeDetailsPage';
-import HoroscopesPage from '@pages/HoroscopesPage/HoroscopesPage';
+
+const HoroscopeRootLayout = lazy(
+  () => import('@components/layouts/HoroscopeRootLayout/HoroscopeRootLayout')
+);
+const HomePage = lazy(() => import('@pages/HomePage/HomePage'));
+const ContactUsPage = lazy(() => import('@pages/ContactUsPage/ContactUsPage'));
+const NotFoundPage = lazy(() => import('@pages/NotFoundPage/NotFoundPage'));
+const HoroscopesPage = lazy(() => import('@pages/HoroscopesPage/HoroscopesPage'));
+const HoroscopeDetailsPage = lazy(() => import('@pages/HoroscopeDetailsPage/HoroscopeDetailsPage'));
 
 import './App.scss';
 
