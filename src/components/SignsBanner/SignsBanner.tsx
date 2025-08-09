@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { memo, useContext } from 'react';
 import { Avatar } from '@mui/material';
 import dayjs from 'dayjs';
 
@@ -7,7 +7,7 @@ import { getFormattedDateRange } from '@utils/dateUtils';
 import type { HoroscopeType } from '@models/horoscope.model';
 import { DateFormat } from '@models/date.types';
 
-import styles from './HoroscopeBanner.module.scss';
+import styles from './SignsBanner.module.scss';
 import { Link } from 'react-router-dom';
 
 interface IProps {
@@ -16,7 +16,7 @@ interface IProps {
   isHeaderHidden?: boolean;
 }
 
-const HoroscopeBanner = ({ type, date, isHeaderHidden }: IProps) => {
+const SignsBanner = ({ type, date, isHeaderHidden }: IProps) => {
   const { signs } = useContext(GlobalContext);
 
   return (
@@ -53,4 +53,4 @@ const HoroscopeBanner = ({ type, date, isHeaderHidden }: IProps) => {
     </div>
   );
 };
-export default HoroscopeBanner;
+export default memo(SignsBanner);

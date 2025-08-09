@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 
 import type { HoroscopeType } from '@models/horoscope.model';
-import HoroscopeBanner from '@components/HoroscopeBanner/HoroscopeBanner';
+import SignsBanner from '@components/SignsBanner/SignsBanner';
 import HoroscopeDashboard from '@components/HoroscopeDashboard/HoroscopeDashboard';
 
 const Horoscopes = () => {
@@ -9,7 +9,7 @@ const Horoscopes = () => {
 
   return (
     <div>
-      <HoroscopeBanner type={type!} />
+      <SignsBanner type={type!} />
       <HoroscopeDashboard />
     </div>
   );

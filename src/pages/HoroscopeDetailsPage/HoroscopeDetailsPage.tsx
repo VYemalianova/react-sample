@@ -11,7 +11,7 @@ import { DateFormat } from '@models/date.types';
 import { HoroscopeType } from '@models/horoscope.model';
 import { getFormattedDateRange } from '@utils/dateUtils';
 import { GlobalContext } from '@store/globalContext';
-import HoroscopeBanner from '@components/HoroscopeBanner/HoroscopeBanner';
+import SignsBanner from '@components/SignsBanner/SignsBanner';
 import ErrorScreen from '@components/Error/Error';
 
 import styles from './HoroscopeDetailsPage.module.scss';
@@ -84,7 +84,7 @@ const HoroscopeDetailsPage = () => {
           <p>{horoscope.description}</p>
         </div>
 
-        <HoroscopeBanner type={params.type as HoroscopeType} isHeaderHidden />
+        <SignsBanner type={params.type as HoroscopeType} isHeaderHidden />
       </div>
     )
   );
