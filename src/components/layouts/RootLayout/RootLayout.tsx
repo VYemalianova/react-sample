@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 import Header from '@components/Header/Header';
 import Footer from '@components/Footer/Footer';
-import NavMenu from '@components/NavMenu/NavMenu';
+import NavMenu from '@components/navMenu/HorizontalNavMenu/HorizontalNavMenu';
 import PageLoader from '@components/PageLoader/PageLoader';
 import AuthModal from '@components/auth/AuthModal/AuthModal';
 import { GlobalContextProvider } from '@store/globalContext';

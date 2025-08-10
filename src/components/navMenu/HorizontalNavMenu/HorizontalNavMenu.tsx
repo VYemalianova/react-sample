@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import { Button } from '@mui/material';
 
 import { GlobalContext } from '@store/globalContext';
@@ -8,19 +8,31 @@ import { HoroscopeType } from '@models/horoscope.model';
 import type { IDropdownOption } from '@models/dropdownOption.model';
 import { SignType } from '@models/sign.model';
 
-import styles from './NavMenu.module.scss';
-import DropDownMenu from '../common/DropDownMenu/DropDownMenu';
+import styles from './HorizontalNavMenu.module.scss';
+import DropDownMenu from '../../common/DropDownMenu/DropDownMenu';
 
 const NavMenu = () => {
   const navigate = useNavigate();
 
   const { signs, user } = useContext(GlobalContext);
-  const signItems = signs.map((sign) => ({
-    id: sign.id,
-    value: sign.signType as SignType,
-    icon: sign.iconDir,
-    info: `(${getFormattedDateRange(sign.startDate, sign.endDate)}})`,
-  }));
+  const signMenuOptions = useMemo(
+    () =>
+      signs.map((sign) => ({
+        id: sign.id,
+        value: sign.signType as SignType,
+        icon: sign.iconDir,
+        info: `(${getFormattedDateRange(sign.startDate, sign.endDate)})`,
+      })),
+    [signs]
+  );
+  const horoscopeTypeMenuOptions = useMemo(
+    () =>
+      Object.entries(HoroscopeType).map(([key, value]) => ({
+        id: key,
+        value,
+      })),
+    [HoroscopeType]
+  );
 
   const handleHoroscopeNavigation = (type: HoroscopeType, item?: IDropdownOption): void => {
     if (item) {
@@ -47,23 +59,20 @@ const NavMenu = () => {
         {user && (
           <DropDownMenu
             label="Horoscope Type"
-            menuItems={Object.entries(HoroscopeType).map(([key, value]) => ({
-              id: key,
-              value,
-            }))}
+            menuItems={horoscopeTypeMenuOptions}
             menuItemClick={(item) => handleHoroscopeNavigation(item.id as HoroscopeType)}
           />
         )}
 
         <DropDownMenu
           label="Daily Sign Horoscope"
-          menuItems={signItems}
+          menuItems={signMenuOptions}
           menuItemClick={(item) => handleHoroscopeNavigation(HoroscopeType.daily, item)}
         />
 
         <DropDownMenu
           label="Love Sign Horoscope"
-          menuItems={signItems}
+          menuItems={signMenuOptions}
           menuItemClick={(item) => handleHoroscopeNavigation(HoroscopeType.love, item)}
         />
       </nav>
