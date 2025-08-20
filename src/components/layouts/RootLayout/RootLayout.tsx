@@ -18,7 +18,10 @@ const Layout = () => {
 
   const [showAuthModal, setShowAuthModal] = useState(false);
 
-  const handleShowAuthModal = useCallback(() => setShowAuthModal(!showAuthModal), []);
+  const handleShowAuthModal = useCallback(
+    () => setShowAuthModal((prev) => !prev),
+    [setShowAuthModal]
+  );
 
   return (
     <GlobalContextProvider>

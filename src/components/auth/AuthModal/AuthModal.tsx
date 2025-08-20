@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import type { AuthMode } from '@models/auth.model';
 
@@ -15,12 +15,19 @@ const AuthModal = ({ isOpen, onClose }: IProps) => {
   const [mode, setMode] = useState<AuthMode>('login');
   const isLogIn = mode === 'login';
 
+  const changeMode = useCallback(
+    (mode: AuthMode) => {
+      setMode(mode);
+    },
+    [setMode]
+  );
+
   return (
     <DialogWrapper isOpen={isOpen} onClose={onClose}>
       <h2 className="text-center">{isLogIn ? 'Sign In' : 'Sign Up'}</h2>
 
-      {isLogIn && <SignInForm onSwitchMode={setMode} onClose={onClose} />}
-      {!isLogIn && <SignUpForm onSwitchMode={setMode} onClose={onClose} />}
+      {isLogIn && <SignInForm onSwitchMode={changeMode} onClose={onClose} />}
+      {!isLogIn && <SignUpForm onSwitchMode={changeMode} onClose={onClose} />}
     </DialogWrapper>
   );
 };

@@ -6,9 +6,9 @@ import styles from './NotFoundPage.module.scss';
 
 const NotFoundPage = () => {
   return (
-    <div className={`content-wrapper ${styles['content-wrapper']}`}>
-      <div className={styles['content']}>
-        <img src={notFoundImg} alt="Not Found" />
+    <div className={`content-wrapper ${styles['page-wrapper']}`}>
+      <div className={styles['page-content']}>
+        <img src={notFoundImg} alt="Not Found" className={styles['not-found-image']} />
 
         <div className={styles['content-block']}>
           <div className="mb-l">
@@ -18,7 +18,7 @@ const NotFoundPage = () => {
             </span>
           </div>
 
-          <div className={styles['first-list']}>
+          <div className={styles['suggestions']}>
             <h4 className="text-caps">Try to do:</h4>
             <ul>
               <li>
@@ -35,7 +35,7 @@ const NotFoundPage = () => {
             </ul>
           </div>
 
-          <div className={styles['second-list']}>
+          <div className={styles['recommendations']}>
             <h4 className="text-caps">You may also like:</h4>
             <ul>
               <li>
