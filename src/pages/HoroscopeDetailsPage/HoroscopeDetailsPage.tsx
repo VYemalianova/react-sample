@@ -1,18 +1,17 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { Avatar } from '@mui/material';
-import Lottie from 'lottie-react';
 import dayjs from 'dayjs';
 
-import dotsloader from '@assets/dotsloader.json';
 import { fetchHoroscope } from '@services/horoscope.service';
 import { useFetch } from '@hooks/useFetch';
 import { DateFormat } from '@models/date.types';
 import { HoroscopeType } from '@models/horoscope.model';
 import { getFormattedDateRange } from '@utils/dateUtils';
 import { GlobalContext } from '@store/globalContext';
-import HoroscopeBanner from '@components/HoroscopeBanner/HoroscopeBanner';
+import SignsBanner from '@components/SignsBanner/SignsBanner';
 import ErrorScreen from '@components/Error/Error';
+import PageLoader from '@components/PageLoader/PageLoader';
 
 import styles from './HoroscopeDetailsPage.module.scss';
 
@@ -34,12 +33,7 @@ const HoroscopeDetailsPage = () => {
   }
 
   if (isLoading) {
-    return (
-      <div className={`${styles['loading-wrapper']} content-wrapper `}>
-        <span>Loading</span>
-        <Lottie animationData={dotsloader} loop={true} />
-      </div>
-    );
+    return <PageLoader />;
   }
 
   return (
@@ -84,7 +78,7 @@ const HoroscopeDetailsPage = () => {
           <p>{horoscope.description}</p>
         </div>
 
-        <HoroscopeBanner type={params.type as HoroscopeType} isHeaderHidden />
+        <SignsBanner type={params.type as HoroscopeType} isHeaderHidden />
       </div>
     )
   );

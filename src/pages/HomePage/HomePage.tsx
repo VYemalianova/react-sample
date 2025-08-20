@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 
-import HoroscopeBanner from '@components/HoroscopeBanner/HoroscopeBanner';
+import SignsBanner from '@components/SignsBanner/SignsBanner';
 import HoroscopeDashboard from '@components/HoroscopeDashboard/HoroscopeDashboard';
 import { HoroscopeType } from '@models/horoscope.model';
 
@@ -22,7 +22,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <HoroscopeBanner type={HoroscopeType.daily} />
+      <SignsBanner type={HoroscopeType.daily} />
       <HoroscopeDashboard />
 
       <div

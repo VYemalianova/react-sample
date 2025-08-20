@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Error.module.scss';
+import { memo } from 'react';
 
 interface IProps {
   title: string;
@@ -22,4 +23,4 @@ const ErrorScreen = ({ title, message }: IProps) => {
   );
 };
 
-export default ErrorScreen;
+export default memo(ErrorScreen);

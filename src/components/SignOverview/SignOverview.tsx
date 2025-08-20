@@ -5,16 +5,25 @@ import { useState } from 'react';
 import type { ISign } from '@models/sign.model';
 import { useIsMobile } from '@hooks/useIsMobile';
 
-import styles from './SignsOverview.module.scss';
+import styles from './SignOverview.module.scss';
+
 interface IProps {
   sign: ISign;
   isPreview?: boolean;
-  action?: (sign: ISign | null) => void;
+  onShowMore?: (sign: ISign) => void;
 }
 
-const SignsOverview = ({ sign, isPreview, action }: IProps) => {
+const SignOverview = ({ sign, isPreview, onShowMore }: IProps) => {
   const isMobile = useIsMobile();
   const [isShowMore, setIsShowMore] = useState(false);
+
+  const handleShowDetails = () => {
+    if (!isMobile) {
+      onShowMore?.(sign);
+    } else {
+      setIsShowMore(!isShowMore);
+    }
+  };
 
   return (
     <div className={styles['sign-overview-wrapper']}>
@@ -52,22 +61,12 @@ const SignsOverview = ({ sign, isPreview, action }: IProps) => {
       </div>
 
       {isPreview && (
-        <Button
-          variant="text"
-          startIcon={<PreviewIcon />}
-          onClick={() => (!isMobile ? action?.(sign) : setIsShowMore((prev) => !prev))}
-        >
+        <Button variant="text" startIcon={<PreviewIcon />} onClick={handleShowDetails}>
           {isShowMore ? 'Show less' : 'Show more'}
-        </Button>
-      )}
-
-      {!isPreview && isMobile && (
-        <Button variant="light" onClick={() => action?.(null)}>
-          Hide
         </Button>
       )}
     </div>
   );
 };
 
-export default SignsOverview;
+export default SignOverview;

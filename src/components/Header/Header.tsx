@@ -4,7 +4,7 @@ import FlareIcon from '@mui/icons-material/Flare';
 import { useIsMobile } from '@hooks/useIsMobile';
 
 import styles from './Header.module.scss';
-import NavBurgerMenu from '../NavBurgerMenu/NavBurgerMenu';
+import NavBurgerMenu from '../navMenu/NavBurgerMenu/NavBurgerMenu';
 import Logo from '../common/Logo/Logo';
 import { useContext } from 'react';
 import { GlobalContext } from '../../store/globalContext';
