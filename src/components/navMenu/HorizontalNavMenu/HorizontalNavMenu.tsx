@@ -36,7 +36,7 @@ const NavMenu = () => {
 
   const handleHoroscopeNavigation = (type: HoroscopeType, item?: IDropdownOption): void => {
     if (item) {
-      navigate(`horoscope/${type}/${item.value}`, { state: { id: item.id, type } });
+      navigate(`horoscope/${type}/${item.value}`);
     } else {
       navigate(`horoscope/${type}`);
     }

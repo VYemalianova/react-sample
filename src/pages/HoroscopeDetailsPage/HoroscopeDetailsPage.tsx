@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { Fragment, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 import dayjs from 'dayjs';
@@ -37,50 +37,52 @@ const HoroscopeDetailsPage = () => {
   }
 
   return (
-    horoscope && (
-      <div className={styles['horoscope-page']}>
-        <div className="gradient--selago-wisppink">
-          <div className={`content-wrapper ${styles['horoscope-page-header']}`}>
-            <div>
-              <h1 className="gradient--text text-capitalize">
-                {horoscope.signType} {horoscope.horoscopeType === HoroscopeType.love && 'Daily'}{' '}
-                {horoscope.horoscopeType} Horoscopes
-              </h1>
+    <div className={styles['horoscope-page']}>
+      {horoscope && sign && (
+        <Fragment>
+          <div className="gradient--selago-wisppink">
+            <div className={`content-wrapper ${styles['horoscope-page-header']}`}>
+              <div>
+                <h1 className="gradient--text text-capitalize">
+                  {horoscope.signType} {horoscope.horoscopeType === HoroscopeType.love && 'Daily'}{' '}
+                  {horoscope.horoscopeType} Horoscopes
+                </h1>
 
-              <div className="text-caps mt-m">
-                {horoscope.horoscopeType === HoroscopeType.daily && (
-                  <span>Today: {dayjs(horoscope.startDate).format(DateFormat.FullDayDate)}</span>
-                )}
-
-                {horoscope.horoscopeType === HoroscopeType.love && (
-                  <span>Today: {dayjs(horoscope.startDate).format(DateFormat.FullDayDate)}</span>
-                )}
-
-                {horoscope.horoscopeType !== HoroscopeType.daily &&
-                  horoscope.horoscopeType !== HoroscopeType.love && (
-                    <span>
-                      {horoscope.horoscopeType}:{' '}
-                      {getFormattedDateRange(
-                        horoscope.startDate,
-                        horoscope.endDate,
-                        DateFormat.FullDayDate
-                      )}
-                    </span>
+                <div className="text-caps mt-m">
+                  {horoscope.horoscopeType === HoroscopeType.daily && (
+                    <span>Today: {dayjs(horoscope.startDate).format(DateFormat.FullDayDate)}</span>
                   )}
+
+                  {horoscope.horoscopeType === HoroscopeType.love && (
+                    <span>Today: {dayjs(horoscope.startDate).format(DateFormat.FullDayDate)}</span>
+                  )}
+
+                  {horoscope.horoscopeType !== HoroscopeType.daily &&
+                    horoscope.horoscopeType !== HoroscopeType.love && (
+                      <span>
+                        {horoscope.horoscopeType}:{' '}
+                        {getFormattedDateRange(
+                          horoscope.startDate,
+                          horoscope.endDate,
+                          DateFormat.FullDayDate
+                        )}
+                      </span>
+                    )}
+                </div>
               </div>
+
+              <Avatar alt={sign.signType} src={sign.imageDir} sx={{ width: 99, height: 99 }} />
             </div>
-
-            <Avatar alt={sign.signType} src={sign.imageDir} sx={{ width: 99, height: 99 }} />
           </div>
-        </div>
 
-        <div className={`content-wrapper ${styles['description']}`}>
-          <p>{horoscope.description}</p>
-        </div>
+          <div className={`content-wrapper ${styles['description']}`}>
+            <p>{horoscope.description}</p>
+          </div>
 
-        <SignsBanner type={params.type as HoroscopeType} isHeaderHidden />
-      </div>
-    )
+          <SignsBanner type={horoscope.horoscopeType} isHeaderHidden />
+        </Fragment>
+      )}
+    </div>
   );
 };
 
